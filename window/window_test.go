@@ -3,21 +3,23 @@ package window
 import (
 	"testing"
 
-	"github.com/0magnet/go-dsp/dsputils"
+	"github.com/mjibson/go-dsp/dsputils"
 )
 
 type windowTest struct {
-	in       int
-	hamming  []float64
-	hann     []float64
-	bartlett []float64
-	flatTop  []float64
-	blackman []float64
+	in				int
+	hamming  		[]float64
+	hann     		[]float64
+	bartlett 		[]float64
+	flatTop  		[]float64
+	blackman 		[]float64
+	blackmanHarris	[]float64
 }
 
 var windowTests = []windowTest{
 	{
 		1,
+		[]float64{1},
 		[]float64{1},
 		[]float64{1},
 		[]float64{1},
@@ -31,6 +33,7 @@ var windowTests = []windowTest{
 		[]float64{0, 0.5, 1, 0.5, 0},
 		[]float64{-0.0004210510000000013, -0.05473684000000003, 1, -0.05473684000000003, -0.0004210510000000013},
 		[]float64{0, 0.34, 1, 0.34, 0},
+		[]float64{0.00006, 0.21747, 1, 0.21747, 0.00006},
 	},
 	{
 		10,
@@ -39,6 +42,7 @@ var windowTests = []windowTest{
 		[]float64{0, 0.222222222222222, 0.444444444444444, 0.666666666666667, 0.888888888888889, 0.888888888888889, 0.666666666666667, 0.444444444444444, 0.222222222222222, 0},
 		[]float64{-0.000421051000000, -0.020172031509486, -0.070199042063189, 0.198210530000000, 0.862476344072674, 0.862476344072674, 0.198210530000000, -0.070199042063189, -0.020172031509486, -0.000421051000000},
 		[]float64{0, 0.0508696327, 0.258000502, 0.63, 0.951129866, 0.951129866, 0.63, 0.258000502, 0.0508696327, 0},
+		[]float64{0.00006, 0.01507, 0.14704, 0.52057, 0.93166, 0.93166, 0.52057, 0.14704, 0.01507, 0.00006},
 	},
 }
 
@@ -73,6 +77,11 @@ func TestWindowFunctions(t *testing.T) {
 		o = Blackman(v.in)
 		if !dsputils.PrettyClose(o, v.blackman) {
 			t.Error("blackman error\ninput:", v.in, "\noutput:", o, "\nexpected:", v.blackman)
+		}
+
+		o = BlackmanHarris(v.in)
+		if !dsputils.PrettyClose(o, v.blackmanHarris) {
+			t.Error("blackmanHarris error\ninput:", v.in, "\noutput:", o, "\nexpected:", v.blackmanHarris)
 		}
 	}
 }
