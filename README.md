@@ -6,6 +6,14 @@ a digital signal processing package for the
 its ISC licence; see [LICENSE](LICENSE) and the notice at the head of each file.
 This fork exists to carry small changes and to be importable under this path.
 
+**Live demo** — this package has no demo of its own, being a library, but the
+FFT here is what draws the spectrogram in
+[audioprism-go](https://github.com/0magnet/audioprism-go), which
+[chaosrack](https://github.com/0magnet/chaosrack) embeds. So it can be watched
+transforming live audio at
+**[0magnet.github.io/chaosrack](https://0magnet.github.io/chaosrack/)** — pick
+the spectrogram or the XY scope.
+
 ## Packages
 
 * **[dsputils](https://pkg.go.dev/github.com/0magnet/go-dsp/dsputils)** - utilities and data structures for DSP
