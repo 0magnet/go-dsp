@@ -3,7 +3,7 @@
 A fork of **[go-dsp](https://github.com/madelynnblue/go-dsp)** by Madelynn Blue —
 a digital signal processing package for the
 [Go programming language](http://golang.org). The code here is upstream's, under
-its ISC licence; see [LICENSE](LICENSE) and the notice at the head of each file.
+its ISC license; see [LICENSE](LICENSE) and the notice at the head of each file.
 This fork exists to carry small changes and to be importable under this path.
 
 **Live demo** — this package has no demo of its own, being a library, but the
