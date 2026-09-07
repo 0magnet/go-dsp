@@ -11,7 +11,7 @@ FFT here is what draws the spectrogram in
 [audioprism-go](https://github.com/0magnet/audioprism-go), which
 [chaosrack](https://github.com/0magnet/chaosrack) embeds. So it can be watched
 transforming live audio at
-**[0magnet.github.io/chaosrack](https://0magnet.github.io/chaosrack/)** — pick
+**[chaosrack.magnetosphere.net](https://chaosrack.magnetosphere.net/)** — pick
 the spectrogram or the XY scope.
 
 ## Packages
